@@ -1,6 +1,8 @@
 package luke.paxels;
 
+import luke.paxels.compat.aether.PaxelAetherMod;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,20 +19,18 @@ public class PaxelMod implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Paxels initialized.");
-        CommonEvents.BEFORE_GAME_START.listen(KEY, PaxelMod::beforeGameStart);
         CommonEvents.AFTER_GAME_START.listen(KEY, PaxelMod::afterGameStart);
         CommonEvents.RECIPES_READY.listen(KEY, PaxelRecipes::onRecipesReady);
         CommonEvents.RECIPES_NAMESPACE_INIT.listen(KEY, PaxelRecipes::initNamespaces);
         CommonEvents.AFTER_ITEM_INIT.listen(KEY, PaxelItems::init);
+        if(FabricLoader.getInstance().isModLoaded("aether")){
+            PaxelAetherMod.onInitialized();
+        }
     }
 
 
     public static void afterGameStart() {
         LookupFuelFurnace.instance.addFuelEntry(PaxelItems.TOOL_PAXEL_WOOD.id, 500);
-    }
-
-    public static void beforeGameStart() {
-        PaxelItems.init();
     }
 
 }

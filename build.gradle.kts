@@ -21,6 +21,7 @@ loom {
 }
 repositories {
     mavenCentral()
+    maven("https://api.modrinth.com/maven")
     maven("https://maven.fabricmc.net/") { name = "Fabric" }
     maven("https://maven.thesignalumproject.net/infrastructure") { name = "SignalumMavenInfrastructure" }
     maven("https://maven.thesignalumproject.net/releases") { name = "SignalumMavenReleases" }
@@ -40,6 +41,7 @@ repositories {
 }
 dependencies {
     compileOnly(libs.commandly)
+    compileOnly(libs.aether)
 
     minecraft("::${libs.versions.bta.get()}")
 
