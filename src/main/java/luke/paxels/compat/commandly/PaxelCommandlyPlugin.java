@@ -12,9 +12,9 @@ import silveon22.deep.block.DEEPBlocks;
 import teamport.aether.item.item_tool.AetherToolMaterial;
 import useless.moonsteel.MoonSteelItems;
 
-import static luke.paxels.compat.aether.PaxelAetherCompatibility.IS_AETHER_LOADED;
-import static luke.paxels.compat.deep.PaxelDeepCompatibility.IS_DEEP_LOADED;
-import static luke.paxels.compat.moonsteel.PaxelMoonCompatibility.IS_MOON_LOADED;
+import static luke.paxels.compat.aether.PaxelAetherMod.IS_AETHER_LOADED;
+import static luke.paxels.compat.deep.PaxelDeepMod.IS_DEEP_LOADED;
+import static luke.paxels.compat.moonsteel.PaxelMoonMod.IS_MOON_LOADED;
 
 public class PaxelCommandlyPlugin implements CommandlyPlugin {
 
@@ -125,11 +125,11 @@ public class PaxelCommandlyPlugin implements CommandlyPlugin {
         PickAxeRegister.register(PaxelItems.TOOL_PAXEL_STEEL, ToolMaterial.steel);
 
         if (IS_AETHER_LOADED) {
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_SKYROOT, AetherToolMaterial.SKYROOT);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_HOLYSTONE, AetherToolMaterial.HOLYSTONE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_ZANITE, AetherToolMaterial.ZANITE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_GRAVITITE, AetherToolMaterial.GRAVITITE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_VALKYRIE, AetherToolMaterial.VALKYRIE);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_SKYROOT, AetherToolMaterial.skyroot);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_HOLYSTONE, AetherToolMaterial.holystone);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_ZANITE, AetherToolMaterial.zanite);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_GRAVITITE, AetherToolMaterial.gravitite);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_VALKYRIE, AetherToolMaterial.valkyrie);
         }
         if (IS_DEEP_LOADED) {
             PickAxeRegister.register(PaxelDeepItems.TOOL_PAXEL_LEAD, PaxelDeepItems.lead);
